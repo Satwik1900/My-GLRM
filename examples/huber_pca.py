@@ -34,7 +34,6 @@ A_hat = glrm_huber.predict() # glrm_pca.predict(X, Y) works too; returns decode(
 ch = glrm_huber.convergence() # convergence history
 pplot([data, A, A_hat, data-A_hat], ["original", "corrupted", "glrm", "error"])
 
-
 # Now with missing data
 from numpy.random import choice
 missing = list(product(range(int(0.25*m), int(0.75*m)), range(int(0.25*n), int(0.75*n))))

@@ -110,7 +110,8 @@ class GLRM(object):
             
             # collect non-missing terms
             for j in range(ni):
-                elems = array([ai[i,j] for i in range(m) if (i,j) not in missing])
+                # elems = array([ai[i,j] for i in range(m) if (i,j) not in missing])
+                elems = array([ai[i, j] for i in range(m) for j in range(ni) if (i, j) not in missing])
                 alpha = cp.Variable()
                 # calculate standarized energy per column
                 sv[j] = cp.Problem(cp.Minimize(\
